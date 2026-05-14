@@ -13,7 +13,7 @@ Image-Editor/
 │   └── ...                    # остальные фавикон
 │
 ├── src/
-│   ├── main.jsx                 # Точка входа: рендерит <App /> в #root
+│   ├── main.jsx                 # Точка входа: рендерит <AppProviders /> в #root
 │   ├── index.css                # Глобальные стили + Tailwind директивы
 │   │
 │   ├── app/
@@ -43,7 +43,6 @@ Image-Editor/
 │       ├── auto-rem.js          # автомасштабирование
 │       ├── resolvers.js         # базовые пути из переменной vite для проекта
 │       └── imageUtils.js        # Все функции обработки: convertImageFormat, resizeImage, 
-│       │                        # mirrorImage, toBlackAndWhite, rotateImage, compressPng
 │
 ├── index.html                   # Мета-теги, SEO, OG, PWA, viewport-скрипт
 ├── package.json                 # Зависимости: react, react-router-dom, lucide-react, react-image-crop
