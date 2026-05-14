@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+
+ <head>
+    <meta charset="UTF-8" />
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="https://ecomsys.ru/spa/image-editor/favicon.png" />
+    <!-- MOBILE VIEWPORT -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        (function forceDesktopLayout() {
+          const BREAKPOINT = 1536;
+          const DESIGN_WIDTH = 1536;
+
+          const screenWidth = window.screen.width;
+          const dpr = window.devicePixelRatio || 1;
+          const realWidth = screenWidth / dpr;
+
+          const meta = document.querySelector('meta[name="viewport"]');
+          if (!meta) return;
+
+          if (realWidth < BREAKPOINT) {
+            meta.setAttribute("content", "width=device-width, initial-scale=1");
+            console.log("adaptive mode:", realWidth);
+            return;
+          }
+
+          const scale = realWidth / DESIGN_WIDTH;
+
+          meta.setAttribute(
+            "content",
+            `width=${DESIGN_WIDTH}, initial-scale=${scale}, maximum-scale=${scale}, user-scalable=no`,
+          );
+
+          console.log("forced 1920 mode:", { realWidth, scale });
+        })();
+      });
+    </script>
+
+  
+    <!--  ОСНОВНОЙ SEO -->
+    <title>Ecomsys Image Editor — обрезка, сжатие, конвертация онлайн</title>
+
+    <meta name="description" content="Бесплатный онлайн-редактор изображений: изменяй размер, обрезай, конвертируй в WebP/JPG/PNG, сжимай без потери качества. Работает в браузере, без регистрации и загрузки на сервер." />
+
+    <meta name="keywords" content="редактор изображений, обрезка фото, сжатие картинок, конвертация в WebP, изменение размера, онлайн редактор, оптимизация изображений, crop image, resize image, compress image" />
+
+    <meta name="author" content="Ecomsys" />
+    <meta name="robots" content="index, follow" />
+
+    <!--  THEME COLOR -->
+    <meta name="theme-color" content="#3b82f6" />
+    <meta name="msapplication-navbutton-color" content="#3b82f6" />
+
+    <!--  iOS PWA -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Image Editor" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <link rel="apple-touch-icon" href="https://ecomsys.ru/spa/image-editor/favicon.png" />
+
+    <!--  Android PWA -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="full-screen" content="yes" />
+
+    <!--  OPEN GRAPH -->
+    <meta property="og:title" content="Image Editor — обрезка, сжатие, конвертация онлайн" />
+    <meta property="og:description" content="Бесплатный редактор изображений в браузере: изменяй размер, обрезай, конвертируй в WebP. Быстро, приватно, без регистрации." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ecomsys.ru/spa/image-editor" />
+    <meta property="og:image" content="https://ecomsys.ru/spa/image-editor/preview.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Image Editor" />
+    <meta property="og:locale" content="ru_RU" />
+
+    <!--  TWITTER -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Image Editor — обрезка, сжатие, конвертация онлайн" />
+    <meta name="twitter:description" content="Редактируй изображения прямо в браузере: обрезка, размер, WebP-конвертация. Бесплатно и приватно." />
+    <meta name="twitter:image" content="https://ecomsys.ru/spa/image-editor/preview.jpg" />
+
+    <!--  CANONICAL -->
+    <link rel="canonical" href="https://ecomsys.ru/spa/image-editor" />
+
+    <!--  PWA MANIFEST -->
+    <link rel="manifest" href="https://ecomsys.ru/spa/image-editor/site.webmanifest" />
+
+    <!--  STRUCTURED DATA (JSON-LD) для лучшего SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Image Editor",
+      "description": "Бесплатный онлайн-редактор изображений: обрезка, изменение размера, конвертация в WebP/JPG/PNG, сжатие без потери качества.",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "RUB"
+      },
+      "featureList": "Crop, Resize, Convert to WebP, Compress, Rotate, Mirror, Black & White Filter",     
+      "url": "https://ecomsys.ru/spa/image-editor"
+    }
+    </script>
+  </head>
+ 
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
