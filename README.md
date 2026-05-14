@@ -15,7 +15,10 @@ Image-Editor/
 ├── src/
 │   ├── main.jsx                 # Точка входа: рендерит <App /> в #root
 │   ├── index.css                # Глобальные стили + Tailwind директивы
-│   ├── App.jsx                  # Главный роутер: <BrowserRouter> с путями "/" и "/editor"
+│   │
+│   ├── app/
+│   │   ├── provider.jsx         # Обверка с autoREM и BrowserRouter
+│   │   └── router.jsx           # Главный роутер
 │   │
 │   ├── pages/
 │   │   ├── HomePage.jsx         # Страница загрузки: дроп-зона + кнопка "Выбрать файл"
